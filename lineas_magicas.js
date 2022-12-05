@@ -26,7 +26,7 @@ window.addEventListener('load', function(){
     let angle=0;
     //posicionar al mouse
     const mouse={x: null, y:null};
-    this.window.addEventListener('mousemove',function(event){
+    window.addEventListener('mousemove',function(event){
         mouse.x=event.x;
         mouse.y=event.y;
         console.log(mouse);
@@ -79,7 +79,7 @@ window.addEventListener('load', function(){
     }
     function init(){
         particleArray=[];
-        for (let i=0;i<300;i++){
+        for (let i=0;i<1000;i++){
             let size=(Math.random()*10)+5;
             let x=Math.random()*(innerWidth-size*2)+size;
             let y=Math.random()*(innerHeight-size*2)+size;
@@ -100,6 +100,18 @@ window.addEventListener('load', function(){
     init();
     animate();
     window.addEventListener('resize',()=>{
+        init();
+    })
+    window.addEventListener('resize',()=>{
+        canvas1.width=window.innerWidth;
+        canvas2.height=window.innerHeight;
+        canvasCenterX=window.innerWidth/2;
+        canvasCenterY=window.innerHeight/2;
+        radius= window.width/5;
+        ctx1.canvas1.width=window.innerWidth;
+        ctx1.canvas1.height=window.innerHeight;
+        ctx2.canvas2.width=window.innerWidth;
+        ctx2.canvas2.height=window.innerHeight;
         init();
     })
 })
