@@ -10,7 +10,6 @@ window.addEventListener('load', function(){
         'rgb(123, 166, 3)',
         'rgb(213, 0, 177)',
     ];
-    
     canvas1.width= window.innerWidth;
     canvas1.height= window.innerHeight;
     canvas2.width= window.innerWidth;
@@ -77,6 +76,20 @@ window.addEventListener('load', function(){
             }
         }
     }
+    function foco(overrides={}){
+        const etiqueta=document.createElement('div')
+        // etiqueta.style.width='100vw'
+        // etiqueta.style.height='100vh'
+        // etiqueta.style.backgroundColor='red'
+        // etiqueta.style.filter='blur(20px)'
+        // etiqueta.style.border='solid 1px black'
+        // etiqueta.style.top='0px'
+        // etiqueta.style.left='0%'
+        // etiqueta.style.borderRadius='0%'
+        // etiqueta.style.position='absolute'
+        etiqueta.className='etiqueta'
+        document.querySelector('body').appendChild(etiqueta)
+    }
     function init(){
         particleArray=[];
         for (let i=0;i<1000;i++){
@@ -99,6 +112,7 @@ window.addEventListener('load', function(){
     }
     init();
     animate();
+    foco();
     window.addEventListener('resize',()=>{
         init();
     })

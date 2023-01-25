@@ -1,0 +1,19 @@
+$color: #fe3c3c
+@mixin helping($radio)
+    width: 2*$radio
+    height: $radio
+@mixin coloring()
+    background-color: red
+    color: yellow
+@if $color==#fe4c3c
+    body
+        background-color: #ffc800
+@else
+    body
+        background-color: #4090ff
+body
+    position: relative
+    ul
+        li
+            @include helping(150px)
+            @include coloring()

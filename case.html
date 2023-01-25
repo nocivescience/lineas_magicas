@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./lineas_magicas.css">
-    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-    <canvas id="canvas1"></canvas>
-    <canvas id="canvas2"></canvas>
+    <div id="A">
+        <div id="B">
+            <div id="C">Click Here</div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('div').forEach(e=>{
+            e.onclick=e=> console.log(e.currentTarget.id)
+        })
+    </script>
 </body>
-<script src="./lineas_magicas.js"></script>
 </html>

@@ -1,0 +1,15 @@
+body
+    #canvas1, #canvas2
+        background-color: #ffffff00
+        width: 100vw
+        height: 100vh
+        border-radius: 0%
+        position: absolute
+        top: 0px
+        left: 0px
+        z-index: 20
+        filter: blur(1px)
+        animation:  change-grays 2s infinite ease
+        @keyframes change-grays
+            0%, 100%  {filter: grayscale(0%)}
+            50%  {filter: grayscale(100%)}

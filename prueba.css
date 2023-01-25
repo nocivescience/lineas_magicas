@@ -1,0 +1,13 @@
+body {
+  background-color: #4090ff;
+}
+
+body {
+  position: relative;
+}
+body ul li {
+  width: 300px;
+  height: 150px;
+  background-color: red;
+  color: yellow;
+}/*# sourceMappingURL=prueba.css.map */
