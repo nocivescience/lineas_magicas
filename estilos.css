@@ -14,20 +14,16 @@ body #canvas1, body #canvas2 {
 @-webkit-keyframes change-grays {
   0%, 100% {
     filter: grayscale(0%) blur(0px);
-    background-color: rgba(0, 166, 255, 0.1254901961);
   }
   50% {
-    filter: grayscale(100%) blur(4px);
-    background-color: rgba(255, 0, 0, 0.9529411765);
+    filter: grayscale(100%) blur(1px);
   }
 }
 @keyframes change-grays {
   0%, 100% {
     filter: grayscale(0%) blur(0px);
-    background-color: rgba(0, 166, 255, 0.1254901961);
   }
   50% {
-    filter: grayscale(100%) blur(4px);
-    background-color: rgba(255, 0, 0, 0.9529411765);
+    filter: grayscale(100%) blur(1px);
   }
 }/*# sourceMappingURL=estilos.css.map */

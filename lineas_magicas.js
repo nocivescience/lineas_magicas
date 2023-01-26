@@ -25,11 +25,6 @@ window.addEventListener('load', function(){
     let angle=0;
     //posicionar al mouse
     const mouse={x: null, y:null};
-    window.addEventListener('mousemove',function(event){
-        mouse.x=event.x;
-        mouse.y=event.y;
-        console.log(mouse);
-    });
     // reubicar la posiucion del muose cada 5 segundos para prevenir que el mouse se estanque cuando se ubique en las esquinas cuando el muse deje la pantalla
     this.setInterval(()=>{
         mouse.x=undefined;
@@ -76,23 +71,9 @@ window.addEventListener('load', function(){
             }
         }
     }
-    function foco(overrides={}){
-        const etiqueta=document.createElement('div')
-        // etiqueta.style.width='100vw'
-        // etiqueta.style.height='100vh'
-        // etiqueta.style.backgroundColor='red'
-        // etiqueta.style.filter='blur(20px)'
-        // etiqueta.style.border='solid 1px black'
-        // etiqueta.style.top='0px'
-        // etiqueta.style.left='0%'
-        // etiqueta.style.borderRadius='0%'
-        // etiqueta.style.position='absolute'
-        etiqueta.className='etiqueta'
-        document.querySelector('body').appendChild(etiqueta)
-    }
     function init(){
         particleArray=[];
-        for (let i=0;i<1000;i++){
+        for (let i=0;i<39;i++){
             let size=(Math.random()*10)+5;
             let x=Math.random()*(innerWidth-size*2)+size;
             let y=Math.random()*(innerHeight-size*2)+size;
@@ -112,7 +93,6 @@ window.addEventListener('load', function(){
     }
     init();
     animate();
-    foco();
     window.addEventListener('resize',()=>{
         init();
     })
@@ -127,5 +107,18 @@ window.addEventListener('load', function(){
         ctx2.canvas2.width=window.innerWidth;
         ctx2.canvas2.height=window.innerHeight;
         init();
+    })
+        window.addEventListener('click',(e)=>{
+            let x=e.clientX
+            let y=e.clientY
+            particleArray.forEach((ball,i)=>{
+                if (
+                    Math.sqrt(Math.pow(x-ball.x,2))<20&&
+                    Math.sqrt(Math.pow(y-ball.y,2))<20
+                ){
+                    particleArray.splice(i,1)
+                }
+            })
+        
     })
 })
